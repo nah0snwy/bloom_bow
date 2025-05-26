@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-M-24.05.2025">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Bow - Donde la Belleza Florece</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@700&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --color-principal: rgb(238, 208, 232); 
+            --color-secundario: rgb(217, 182, 224); 
+            --color-acento: rgb(240, 166, 202); 
+            --color-texto-claro: #FFFFFF;
+            --color-texto-oscuro: #5D4037; 
+            --color-fondo-claro: rgb(240, 230, 239);
+            --color-card-fondo: #FFFFFF;
+            --color-sombra: rgba(255, 21, 134, 0.218); 
+            --color-complementario-lavanda: rgb(184, 190, 221); 
+        }
+
+        body {
+            font-family: 'Lora', serif; 
+            background-color: var(--color-fondo-claro);
+            color: var(--color-texto-oscuro);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: var(--color-principal);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--color-acento);
+            box-shadow: 0 2px 8px var(--color-sombra); 
+            position: relative;
+            overflow: hidden;
+
+            background-image: url('Fondo.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--color-texto-claro); 
+            min-height: 200px;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(234, 200, 227, 0.6);
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+            font-size: 3.5em;
+            margin: 0;
+            color: var(--color-texto-oscuro); 
+            text-shadow: 2px 2px 5px rgba(255, 21, 134, 0.218); 
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navegación */
+        nav {
+            position: relative;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-texto-claro);
+            font-weight: bold;
+            padding: 7px 17px;
+            border: 1px solid var(--color-texto-oscuro); 
+            border-radius: 25px;
+            background-color: var(--color-acento);
+            transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            display: block;
+            text-shadow: 1px 1px 2px rgb(217, 182, 224);
+            font-family: 'Lora', serif;
+        }
+
+        nav a:hover {
+            background-color: rgb(210, 130, 170); 
+            border-color: var(--color-texto-oscuro); 
+            transform: translateY(-2px);
+        }
+
+        
+        main {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        
+        .hero {
+            background-color: var(--color-secundario);
+            padding: 35px 30px; 
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px var(--color-sombra);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--color-texto-oscuro); 
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--color-principal) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, var(--color-acento) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        .hero h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.8em; 
+            color: var(--color-texto-oscuro);
+            margin-bottom: 10px; 
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 25px auto; 
+        }
+
+        .call-to-action {
+            display: inline-block;
+            background-color: var(--color-acento);
+            color: var(--color-texto-claro);
+            padding: 15px 30px;
+            border: 1px solid var(--color-texto-oscuro); 
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-shadow: 2px 2px 5px rgba(255, 21, 134, 0.218);
+            text-decoration: none;
+            font-family: 'Lora', serif;
+        }
+
+        .call-to-action:hover {
+            background-color: rgb(210, 130, 170);
+            transform: translateY(-3px);
+            border-color: var(--color-texto-oscuro); 
+        }
+
+        /* Sección: Historia de la Marca */
+        .historia-marca {
+            background-color: var(--color-card-fondo);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--color-sombra);
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            border: 1px solid var(--color-texto-oscuro); 
+        }
+
+        .historia-marca h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.8em;
+            color: var(--color-acento);
+            margin-top: 0;
+            margin-bottom: 25px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .historia-imagen {
+            flex: 0 0 400px; 
+            height: 400px; 
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--color-secundario);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--color-texto-oscuro); 
+        }
+
+        .historia-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+          
+        }
+
+        .historia-imagen:hover img {
+            transform: scale(1.08);
+        }
+
+        .historia-texto {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .historia-texto p {
+            font-size: 1.1em;
+            color: #555555;
+            margin: 0 0 15px 0;
+            line-height: 1.8;
+            text-align: justify;
+            font-family: 'Lora', serif;
+        }
+
+        .historia-texto p:last-child {
+            margin-bottom: 0;
+        }
+
+    
+        footer {
+            background-color: var(--color-principal);
+            color: var(--color-texto-claro);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0 -2px 8px var(--color-sombra);
+            font-family: 'Lora', serif;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+     
+        @media (max-width: 768px) {
+            header {
+                min-height: 250px; 
+            }
+            header h1 {
+                font-size: 2.8em;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 6px 0;
+            }
+            nav a {
+                padding: 7px 15px;
+                font-size: 0.85em;
+            }
+            .hero {
+                padding: 30px 20px; 
+            }
+            .hero h2 {
+                font-size: 1.5em; 
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .historia-marca {
+                flex-direction: column;
+                padding: 30px;
+                text-align: center;
+            }
+            .historia-imagen {
+                flex: none;
+                width: 80%;
+                max-width: 300px;
+                height: auto; 
+                margin-bottom: 20px;
+            }
+            .historia-imagen img {
+                height: auto;
+                object-fit: contain;
+            }
+            .historia-texto {
+                flex: none;
+                min-width: unset;
+                width: 100%;
+            }
+            .historia-texto p {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                min-height: 200px;
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
+            nav li {
+                margin: 6px 0;
+            }
+            .hero {
+                padding: 25px 15px;
+            }
+            .hero h2 {
+                font-size: 1.3em;
+            }
+            .call-to-action {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            .historia-marca {
+                padding: 20px;
+            }
+            .historia-imagen {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bloom & Bow</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Descubre el encanto de Bloom & Bow</h2>
+            <p>Donde cada detalle está diseñado para inspirar tu lado más dulce y delicado.</p>
+            <a href="Productos.html" class="call-to-action">Explora nuestra colección</a>
+        </section>
+
+        <section class="historia-marca">
+            <h3>Nuestra Historia: La Magia de Bloom & Bow</h3>
+            <div class="historia-imagen">
+                <img src="inicio.jpg" alt="Imagen representativa de Bloom & Bow">
+            </div>
+            <div class="historia-texto">
+                <p>Todo comenzó con un sueño, crear un universo donde la belleza se entrelazara con la delicadeza y la feminidad. Una pequeña chispa de inspiración floral y amor por los lazos más exquisitos, dieron vida a **Bloom & Bow**.</p>
+                <p>Desde nuestros humildes inicios, nos hemos dedicado a diseñar productos que no solo realzan tu encanto natural, sino que también te envuelven en una sensación de dulzura y romance. Cada pieza, desde nuestros bálsamos labiales hasta nuestros sets de lazos, está elaborada con pasión y los ingredientes más finos, pensando en la mujer que celebra su esencia.</p>
+                <p>Bloom & Bow es más que una marca, es una comunidad de amantes de la belleza que creen en el poder de los pequeños detalles. Te invitamos a ser parte de nuestra historia y a descubrir la magia que florece en cada uno de nuestros productos.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bloom & Bow. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

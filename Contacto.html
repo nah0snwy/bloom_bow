@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Bow - Contáctanos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-principal: rgb(238, 208, 232);
+            --color-secundario: rgb(217, 182, 224);
+            --color-acento: rgb(240, 166, 202);
+            --color-texto-claro: #FFFFFF;
+            --color-texto-oscuro: #5D4037;
+            --color-fondo-claro: rgb(240, 230, 239);
+            --color-card-fondo: #FFFFFF;
+            --color-sombra: rgba(255, 21, 134, 0.218);
+            --color-complementario-lavanda: rgb(184, 190, 221);
+            
+            --color-principal-contacto: rgb(240, 166, 202);
+            --color-secundario-contacto: rgb(239, 195, 230);
+            --color-acento-contacto: rgb(156, 137, 184);
+            --color-fondo-claro-contacto: rgb(240, 230, 239);
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--color-fondo-claro-contacto);
+            color: var(--color-texto-oscuro);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--color-principal);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--color-acento);
+            box-shadow: 0 2px 8px var(--color-sombra);
+            position: relative;
+            overflow: hidden;
+            background-image: url('Fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--color-texto-claro);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(234, 200, 227, 0.6);
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5em;
+            margin: 0;
+            color: var(--color-texto-oscuro);
+            text-shadow: 2px 2px 5px var(--color-sombra);
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            position: relative;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-texto-claro);
+            font-weight: bold;
+            padding: 7px 17px;
+            border: 1px solid var(--color-texto-oscuro);
+            border-radius: 25px;
+            background-color: var(--color-acento);
+            transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            display: block;
+            text-shadow: 1px 1px 2px rgb(217, 182, 224);
+            font-family: 'Lora', serif;
+        }
+
+        nav a:hover {
+            background-color: rgb(210, 130, 170);
+            border-color: var(--color-texto-oscuro);
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 30px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .seccion-titulo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3em;
+            text-align: center;
+            color: var(--color-acento-contacto);
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .seccion-subtitulo {
+            font-family: 'Lora', serif;
+            font-size: 1.2em;
+            text-align: center;
+            color: var(--color-texto-oscuro);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contacto-contenido {
+            background-color: var(--color-card-fondo);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--color-sombra);
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .formulario-contacto, .info-contacto {
+            flex: 1 1 350px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .formulario-contacto h4, .info-contacto h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8em;
+            color: var(--color-principal-contacto);
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .formulario-contacto h4::after, .info-contacto h4::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-acento-contacto);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .formulario-contacto form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .formulario-contacto label {
+            font-family: 'Lora', serif;
+            font-size: 1em;
+            color: var(--color-texto-oscuro);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .formulario-contacto input[type="text"],
+        .formulario-contacto input[type="email"],
+        .formulario-contacto textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid var(--color-secundario-contacto);
+            border-radius: 8px;
+            font-family: 'Lora', serif;
+            font-size: 1em;
+            color: #555;
+            background-color: #FFF;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .formulario-contacto input[type="text"]:focus,
+        .formulario-contacto input[type="email"]:focus,
+        .formulario-contacto textarea:focus {
+            border-color: var(--color-acento-contacto);
+            box-shadow: 0 0 5px rgba(156, 137, 184, 0.5);
+            outline: none;
+        }
+
+        .formulario-contacto textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .formulario-contacto button[type="submit"] {
+            text-decoration: none;
+            color: var(--color-texto-claro);
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid var(--color-texto-oscuro);
+            border-radius: 25px;
+            background-color: var(--color-acento);
+            transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            display: block;
+            text-shadow: 1px 1px 2px rgb(217, 182, 224); 
+            font-family: 'Lora', serif;
+            cursor: pointer;
+            margin-top: 20px;
+            align-self: center;
+            width: fit-content; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        }
+
+        .formulario-contacto button[type="submit"]:hover {
+            background-color: rgb(210, 130, 170); 
+            border-color: var(--color-texto-oscuro);
+            transform: translateY(-2px); 
+        }
+
+        .info-contacto p {
+            font-family: 'Lora', serif;
+            font-size: 1.1em;
+            color: var(--color-texto-oscuro);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .info-contacto p strong {
+            color: var(--color-principal-contacto); 
+        }
+    
+        .info-contacto .icon {
+            color: var(--color-acento-contacto);
+            font-size: 1.2em;
+        }
+        
+        .info-contacto p a {
+            color: var(--color-acento-contacto); 
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .info-contacto p a:hover {
+            color: rgb(130, 115, 150); 
+        }
+      
+        footer {
+            background-color: var(--color-principal); 
+            color: var(--color-texto-claro);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0 -2px 8px var(--color-sombra); 
+            font-family: 'Lora', serif; 
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 8px 0;
+            }
+            .seccion-titulo {
+                font-size: 2.5em;
+            }
+            .seccion-subtitulo {
+                font-size: 1em;
+            }
+            .contacto-contenido {
+                flex-direction: column;
+                padding: 30px;
+                gap: 30px;
+            }
+            .formulario-contacto, .info-contacto {
+                flex: none;
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            nav li {
+                margin: 6px 0;
+            }
+            .seccion-titulo {
+                font-size: 2em;
+            }
+            .contacto-contenido {
+                padding: 20px;
+            }
+            .formulario-contacto input[type="text"],
+            .formulario-contacto input[type="email"],
+            .formulario-contacto textarea {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bloom & Bow</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="seccion-titulo">Contáctanos y Permítenos Encantarte</h2>
+        <p class="seccion-subtitulo">¿Tienes alguna pregunta, sugerencia o simplemente quieres compartir tu amor por la estética coquette? ¡Estamos aquí para ti!</p>
+
+        <section class="contacto-contenido">
+            <div class="formulario-contacto">
+                <h4>Envíanos un Mensaje</h4>
+                <form action="#" method="POST">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="tu.email@ejemplo.com">
+
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required placeholder="Consulta sobre un producto, etc.">
+
+                    <label for="mensaje">Tu Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required placeholder="Escribe aquí tu mensaje..."></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="info-contacto">
+                <h4>Detalles de Contacto</h4>
+                <p><span class="icon">📍</span><strong>Dirección:</strong> Calle Flor de Cerezo 123, Jardín Encantado, Ciudad Bella</p>
+                <p><span class="icon">📧</span><strong>Email:</strong> <a href="mailto:hola@bloomandbow.com">hola@bloomandbow.com</a></p>
+                <p><span class="icon">📞</span><strong>Teléfono:</strong> +1 (555) 123-4567</p>
+                <p><span class="icon">⏰</span><strong>Horario:</strong> Lunes a Viernes, 9:00 AM - 6:00 PM </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bloom & Bow. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

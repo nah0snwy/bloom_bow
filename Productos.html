@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Bow - Nuestra Colección de Productos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@700&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-principal: rgb(238, 208, 232);
+            --color-secundario: rgb(217, 182, 224);
+            --color-acento: rgb(240, 166, 202);
+            --color-texto-claro: #FFFFFF;
+            --color-texto-oscuro: #5D4037;
+            --color-fondo-claro: rgb(240, 230, 239);
+            --color-card-fondo: #FFFFFF;
+            --color-sombra: rgba(255, 21, 134, 0.218);
+            --color-complementario-lavanda: rgb(184, 190, 221);
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--color-fondo-claro);
+            color: var(--color-texto-oscuro);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--color-principal);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--color-acento);
+            box-shadow: 0 2px 8px var(--color-sombra);
+            position: relative;
+            overflow: hidden;
+
+            background-image: url('Fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--color-texto-claro);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(234, 200, 227, 0.6);
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5em;
+            margin: 0;
+            color: var(--color-texto-oscuro);
+            text-shadow: 2px 2px 5px var(--color-sombra);
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            position: relative;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-texto-claro);
+            font-weight: bold;
+            padding: 7px 17px;
+            border: 1px solid var(--color-texto-oscuro);
+            border-radius: 25px;
+            background-color: var(--color-acento);
+            transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            display: block;
+            text-shadow: 1px 1px 2px rgb(217, 182, 224);
+            font-family: 'Lora', serif;
+        }
+
+        nav a:hover {
+            background-color: rgb(210, 130, 170);
+            border-color: var(--color-texto-oscuro);
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .galeria-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .producto-card {
+            background-color: var(--color-card-fondo);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px var(--color-sombra);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--color-texto-oscuro);
+        }
+
+        .producto-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(255, 21, 134, 0.3);
+        }
+
+        .producto-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px var(--color-sombra);
+            border: 1px solid var(--color-texto-oscuro);
+        }
+
+        .producto-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            color: var(--color-secundario);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .producto-card p {
+            font-family: 'Lora', serif;
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .producto-card .precio {
+            font-family: 'Lora', serif;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--color-texto-oscuro);
+            display: block;
+        }
+
+        .seccion-titulo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3em;
+            text-align: center;
+            color: var(--color-acento);
+            margin-bottom: 20px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px var(--color-sombra);
+        }
+        .seccion-subtitulo {
+            font-family: 'Lora', serif;
+            font-size: 1.2em;
+            text-align: center;
+            color: var(--color-texto-oscuro);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background-color: var(--color-principal);
+            color: var(--color-texto-claro);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0 -2px 8px var(--color-sombra);
+            font-family: 'Lora', serif;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                min-height: 250px;
+            }
+            header h1 {
+                font-size: 2.8em;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 6px 0;
+            }
+            nav a {
+                padding: 7px 15px;
+                font-size: 0.85em;
+            }
+            .seccion-titulo {
+                font-size: 2.5em;
+            }
+            .seccion-subtitulo {
+                font-size: 1em;
+            }
+            .galeria-productos {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+            .producto-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                min-height: 200px;
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
+            nav li {
+                margin: 6px 0;
+            }
+            .seccion-titulo {
+                font-size: 2em;
+            }
+            .galeria-productos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bloom & Bow</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="seccion-titulo">Nuestra Colección Completa</h2>
+        <p class="seccion-subtitulo">Descubre la magia de Bloom & Bow a través de nuestra exclusiva selección de productos, diseñados con amor y un toque coquette para ti.</p>
+
+        <section class="galeria-productos">
+            <div class="producto-card">
+                <img src="labial.jpg" alt="Bálsamo Labial Sweet Blush">
+                <h4>Bálsamo Labial "Sweet Blush"</h4>
+                <p>Un toque de color y la hidratación más dulce para tus labios, con aroma a fresas frescas.</p>
+                <span class="precio">S/. 12.99</span>
+            </div>
+
+            <div class="producto-card">
+                <img src="perfume.jpg" alt="Mini Perfume Garden Whisper">
+                <h4>Mini Perfume "Garden Whisper"</h4>
+                <p>Una fragancia floral suave, que evoca los secretos de un jardín al atardecer.</p>
+                <span class="precio">S/. 25.50</span>
+            </div>
+
+            <div class="producto-card">
+                <img src="lazo.jpg" alt="Set de Lazos Coquette Bows">
+                <h4>Set de Lazos "Coquette Bows"</h4>
+                <p>Lazos de seda artesanales, perfectos para añadir un toque romántico a cualquier peinado.</p>
+                <span class="precio">S/. 18.00</span>
+            </div>
+
+            <div class="producto-card">
+                <img src="crema.jpg" alt="Crema de Manos Silky Touch">
+                <h4>Crema de Manos "Silky Touch"</h4>
+                <p>Enriquecida con rosa mosqueta, para manos suaves y con un aroma delicado.</p>
+                <span class="precio">S/. 9.50</span>
+            </div>
+
+            <div class="producto-card">
+                <img src="brochas.jpg" alt="Brocha de Maquillaje de Seda">
+                <h4>Brocha para Rubor "Silk Kiss"</h4>
+                <p>Cerdas ultrasuaves para una aplicación impecable y un acabado natural.</p>
+                <span class="precio">S/. 15.00</span>
+            </div>
+
+            <div class="producto-card">
+                <img src="espejo.jpg" alt="Espejo de Mano Vintage">
+                <h4>Espejo de Mano "Vintage Charm"</h4>
+                <p>Un accesorio encantador, ideal para tus retoques de belleza con estilo.</p>
+                <span class="precio">S/. 22.00</span>
+            </div>
+
+            <div class="producto-card">
+                <img src="pinsas.jpg" alt="Set de Pinzas Decoradas">
+                <h4>Set de Pinzas "Gatsby Glam"</h4>
+                <p>Pinzas decoradas con perlas y brillos para un toque de sofisticación.</p>
+                <span class="precio">S/. 14.50</span>
+            </div>
+
+            <div class="producto-card">
+                <img src="vela.jpg" alt="Vela Aromática Rosa">
+                <h4>Vela Aromática "Rose Dream"</h4>
+                <p>Crea una atmósfera cálida y romántica con su suave aroma a pétalos de rosa.</p>
+                <span class="precio">S/. 19.99</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bloom & Bow. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom & Bow - Nuestra Historia y Filosofía</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-principal: rgb(238, 208, 232);
+            --color-secundario: rgb(217, 182, 224);
+            --color-acento: rgb(240, 166, 202);
+            --color-texto-claro: #FFFFFF;
+            --color-texto-oscuro: #5D4037;
+            --color-fondo-claro: rgb(240, 230, 239);
+            --color-card-fondo: #FFFFFF;
+            --color-sombra: rgba(255, 21, 134, 0.218);
+            --color-complementario-lavanda: rgb(184, 190, 221);
+            
+            --color-principal-nosotros: rgb(240, 166, 202);
+            --color-secundario-nosotros: rgb(239, 195, 230);
+            --color-acento-nosotros: rgb(156, 137, 184);
+            --color-fondo-claro-nosotros: rgb(240, 230, 239);
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--color-fondo-claro-nosotros);
+            color: var(--color-texto-oscuro);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--color-principal);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--color-acento);
+            box-shadow: 0 2px 8px var(--color-sombra);
+            position: relative;
+            overflow: hidden;
+            background-image: url('Fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--color-texto-claro);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(234, 200, 227, 0.6);
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5em;
+            margin: 0;
+            color: var(--color-texto-oscuro);
+            text-shadow: 2px 2px 5px var(--color-sombra);
+            position: relative;
+            z-index: 2;
+        }
+
+        nav {
+            position: relative;
+            z-index: 2;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-texto-claro);
+            font-weight: bold;
+            padding: 7px 17px;
+            border: 1px solid var(--color-texto-oscuro);
+            border-radius: 25px;
+            background-color: var(--color-acento);
+            transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+            display: block;
+            text-shadow: 1px 1px 2px rgb(217, 182, 224);
+            font-family: 'Lora', serif;
+        }
+
+        nav a:hover {
+            background-color: rgb(210, 130, 170);
+            border-color: var(--color-texto-oscuro);
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .seccion-titulo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3em;
+            text-align: center;
+            color: var(--color-acento-nosotros);
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .seccion-subtitulo {
+            font-family: 'Lora', serif;
+            font-size: 1.2em;
+            text-align: center;
+            color: var(--color-texto-oscuro);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contenido-nosotros {
+            background-color: var(--color-card-fondo);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--color-sombra);
+            margin-bottom: 40px;
+        }
+
+        .contenido-nosotros h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2em;
+            color: var(--color-principal-nosotros);
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .contenido-nosotros h4::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-acento-nosotros);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .contenido-nosotros p {
+            font-family: 'Lora', serif;
+            font-size: 1.1em;
+            color: var(--color-texto-oscuro);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .valores-pilares {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .valor-card {
+            background-color: var(--color-fondo-claro-nosotros);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--color-sombra);
+            flex: 1 1 280px;
+            border: 1px dashed var(--color-secundario-nosotros);
+            transition: transform 0.3s ease;
+        }
+
+        .valor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .valor-card h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.6em;
+            color: var(--color-acento-nosotros);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .valor-card p {
+            font-family: 'Lora', serif;
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--color-principal);
+            color: var(--color-texto-claro);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            box-shadow: 0 -2px 8px var(--color-sombra);
+            font-family: 'Lora', serif;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav li {
+                margin: 8px 0;
+            }
+            .seccion-titulo {
+                font-size: 2.5em;
+            }
+            .seccion-subtitulo {
+                font-size: 1em;
+            }
+            .contenido-nosotros {
+                padding: 30px;
+            }
+            .contenido-nosotros h4 {
+                font-size: 1.8em;
+            }
+            .valores-pilares {
+                flex-direction: column;
+                align-items: center;
+            }
+            .valor-card {
+                width: 90%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            nav li {
+                margin: 6px 0;
+            }
+            .seccion-titulo {
+                font-size: 2em;
+            }
+            .contenido-nosotros {
+                padding: 20px;
+            }
+            .contenido-nosotros h4 {
+                font-size: 1.5em;
+            }
+            .valor-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bloom & Bow</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="seccion-titulo">Conoce Más Sobre Bloom & Bow</h2>
+        <p class="seccion-subtitulo">Más allá de nuestros productos, somos una promesa de encanto, calidad y pasión por la belleza que florece en cada detalle.</p>
+
+        <section class="contenido-nosotros">
+            <h4>Nuestra Misión</h4>
+            <p>En Bloom & Bow, nuestra misión es infundir delicadeza y alegría en la vida cotidiana de nuestras clientes a través de productos de belleza y accesorios exquisitos. Nos dedicamos a crear experiencias encantadoras, que celebren la feminidad, la elegancia y la autenticidad, siempre con un toque de magia coquette.</p>
+
+            <h4>Nuestra Visión</h4>
+            <p>Aspiramos a ser la marca de referencia para aquellas que buscan un estilo de vida romántico y soñador, donde cada producto sea un reflejo de su personalidad única. Visualizamos un mundo donde los pequeños lujos y los detalles preciosos no sean solo objetos, sino fuentes de inspiración y confianza.</p>
+
+            <h4>Lo Que Nos Hace Únicos</h4>
+            <p>Nos distinguimos por nuestra inquebrantable dedicación a la artesanía, la calidad premium y el diseño inspirado. Cada ingrediente es seleccionado con cuidado, y cada lazo es atado con precisión. En Bloom & Bow, creemos que la verdadera belleza reside en la armonía entre la inocencia y la sofisticación, y nos esforzamos por capturar esa esencia en todo lo que hacemos.</p>
+        </section>
+
+        <section class="valores-pilares">
+            <h3 class="seccion-titulo" style="width: 100%; margin-bottom: 30px;">Nuestros Pilares</h3>
+            <div class="valor-card">
+                <h5>Pasión</h5>
+                <p>Creamos con el corazón, dedicando amor en cada detalle para inspirar felicidad.</p>
+            </div>
+            <div class="valor-card">
+                <h5>Calidad</h5>
+                <p>Solo utilizamos los mejores materiales y procesos para asegurar la excelencia.</p>
+            </div>
+            <div class="valor-card">
+                <h5>Delicadeza</h5>
+                <p>Nuestros diseños reflejan la gracia y el encanto de la estética coquette.</p>
+            </div>
+            <div class="valor-card">
+                <h5>Sueños</h5>
+                <p>Fomentamos un mundo de fantasía y romanticismo a través de nuestros productos.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bloom & Bow. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
